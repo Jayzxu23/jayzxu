@@ -149,7 +149,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== ACTIVITY SECTION - UPDATED ===== */
+/* ===== ACTIVITY SECTION ===== */
 .activity-header {
     display: flex;
     align-items: center;
@@ -304,7 +304,7 @@ body {
     transform: scale(1.1);
 }
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .main-container {
         width: 90%;
