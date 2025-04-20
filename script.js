@@ -1,4 +1,3 @@
-// Typing animation
 const typedTextSpan = document.getElementById("typed-text");
 const typedDescriptionSpan = document.getElementById("typed-description")
 const cursorSpan = document.createElement("span");
@@ -53,7 +52,6 @@ function eraseDescription() {
 }
 
 
-// Mute toggle functionality
 const muteButton = document.getElementById('mute-toggle');
 const video = document.getElementById('video-background');
 
@@ -64,7 +62,6 @@ muteButton.addEventListener('click', function() {
     '<i class="fas fa-volume-up"></i>';
 });
 
-// Video autoplay handling (keep existing)
 document.addEventListener("DOMContentLoaded", function() {
     const video = document.getElementById("video-background");
     video.volume = 0.3;
