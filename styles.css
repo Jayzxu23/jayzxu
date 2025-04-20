@@ -1,0 +1,336 @@
+/* ===== FONT IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* ===== BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+html {
+    cursor: default;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    line-height: 1.6;
+}
+
+/* ===== CURSOR TRAIL ===== */
+.cursor-trail {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: 
+        width 0.2s ease-out,
+        height 0.2s ease-out,
+        opacity 0.3s ease;
+    mix-blend-mode: screen;
+}
+
+.cursor-trail.pulse {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== VIDEO BACKGROUND ===== */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    pointer-events: none;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.main-container {
+    background-color: rgba(40, 40, 40, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== PROFILE SECTION ===== */
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.profile-info {
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.username {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.discord-id {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.profile-description {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    height: 24px;
+    overflow: hidden;
+    font-weight: 400;
+}
+
+/* ===== INFO CONTAINERS ===== */
+.info-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.activity-box, .server-box {
+    background: rgba(45, 45, 45, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 16px;
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-box:hover, .server-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ACTIVITY SECTION - UPDATED ===== */
+.activity-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.activity-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.activity-status {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.activity-status::before {
+    content: "•";
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.activity-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== SERVER SECTION ===== */
+.server-box {
+    justify-content: center;
+    padding: 16px 20px;
+}
+
+.server-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.server-pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.server-meta {
+    flex: 1;
+}
+
+.server-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.server-stats {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.5px;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 15px;
+}
+
+.social-icon {
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+.fa-instagram:hover {
+    color: #E1306C;
+}
+
+.fa-envelope:hover {
+    color: #D44638;
+}
+
+.fa-tiktok {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.fa-facebook:hover {
+    color: #1877F2;
+}
+
+.fa-discord:hover {
+    color: #5865F2;
+}
+
+/* ===== ANIMATIONS ===== */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 24px;
+    background-color: white;
+    animation: blink 1.2s ease infinite;
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ===== MUTE BUTTON ===== */
+.mute-button {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: none;
+    z-index: 100;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.mute-button:hover {
+    background: rgba(0,0,0,0.5);
+    transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    .main-container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-info {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .info-container {
+        flex-direction: column;
+    }
+    
+    .activity-box, .server-box {
+        height: auto;
+        min-height: 140px;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+}

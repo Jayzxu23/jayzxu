@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Socials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video id="video-background" autoplay loop>
+        <source src="assets/videos/WEAREJAPANESEGOBLIN.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="main-container">
+        <button id="mute-toggle" class="mute-button">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        <div class="profile-section">
+            <img src="assets/images/PFP.jpg" alt="Discord Profile" class="profile-pic">
+            <div class="profile-info">
+                <div class="username" id="typed-text"></div>
+                <div class="discord-id">_jayzxuhaxashi</div>
+                <div class="profile-description" id="typed-description"></div>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="activity-box">
+                <div class="box-title">Current Activity</div>
+                <div class="activity">
+                    <img src="assets/images/CHATG.png" alt="Activity Icon" class="activity-icon">
+                    <div class="activity-name">Playing ChatGPT</div>
+                </div>
+            </div>
+
+            <div class="server-box">
+                <div class="box-title">Our Server</div>
+                <div class="server-info">
+                    <img src="assets/images/DCPFP.png" alt="Server Icon" class="server-pic">
+                    <div>
+                        <div>Our Awesome Server</div>
+                        <div class="server-stats">69 Online • 420 Members</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/jayzxux.09/" target="_blank"><i class="fab fa-instagram social-icon"></i></a>
+            <a href="mailto:mjsajol23@gmail.com"><i class="fas fa-envelope social-icon"></i></a>
+            <a href="https://tiktok.com/@yourusername" target="_blank"><i class="fab fa-tiktok social-icon"></i></a>
+            <a href="https://www.facebook.com/jayzxu.hakashi" target="_blank"><i class="fab fa-facebook social-icon"></i></a>
+            <a href="https://discord.gg/GS7hGzatnu" target="_blank"><i class="fab fa-discord social-icon"></i></a>
+        </div>  
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Cursor Trail Effect
+        const cursorTrail = document.createElement('div');
+        cursorTrail.classList.add('cursor-trail');
+        document.body.appendChild(cursorTrail);
+        
+        let mouseX = 0, mouseY = 0;
+        let trailX = 0, trailY = 0;
+        const delay = 0.05;
+        
+        function animateCursor() {
+            const dx = mouseX - trailX;
+            const dy = mouseY - trailY;
+            
+            trailX += dx * delay;
+            trailY += dy * delay;
+            
+            cursorTrail.style.left = `${trailX}px`;
+            cursorTrail.style.top = `${trailY}px`;
+            
+            requestAnimationFrame(animateCursor);
+        }
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Add pulse effect when moving fast
+            const velocity = Math.sqrt(Math.pow(e.movementX, 2) + Math.pow(e.movementY, 2));
+            if (velocity > 5) {
+                cursorTrail.style.width = '30px';
+                cursorTrail.style.height = '30px';
+                cursorTrail.style.opacity = '0.4';
+            } else {
+                cursorTrail.style.width = '20px';
+                cursorTrail.style.height = '20px';
+                cursorTrail.style.opacity = '0.2';
+            }
+        });
+        
+       
+        document.addEventListener('click', () => {
+            cursorTrail.style.width = '40px';
+            cursorTrail.style.height = '40px';
+            cursorTrail.style.opacity = '0';
+            setTimeout(() => {
+                cursorTrail.style.width = '20px';
+                cursorTrail.style.height = '20px';
+                cursorTrail.style.opacity = '0.2';
+            }, 300);
+        });
+        
+    
+        animateCursor();
+    </script>
+</body>
+</html>
