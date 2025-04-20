@@ -59,7 +59,6 @@
 
     <script src="script.js"></script>
     <script>
-        // Cursor Trail Effect
         const cursorTrail = document.createElement('div');
         cursorTrail.classList.add('cursor-trail');
         document.body.appendChild(cursorTrail);
@@ -85,7 +84,6 @@
             mouseX = e.clientX;
             mouseY = e.clientY;
             
-            // Add pulse effect when moving fast
             const velocity = Math.sqrt(Math.pow(e.movementX, 2) + Math.pow(e.movementY, 2));
             if (velocity > 5) {
                 cursorTrail.style.width = '30px';
